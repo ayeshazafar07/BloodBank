@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>BloodBank Patient Login</h1>
+            <hr>
+          </div>
+  
+
+            <div class="mb-3">
+              <label class="form-label" style=" font-weight:bold; color: #dc3545;">Email address</label>
+              <input formControlName="adminemail" type="text" class="form-control" id="adminemail"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" style=" font-weight:bold; color: #dc3545;">Password</label>
+              <input formControlName="adminpassword" type="password" class="form-control" id="adminpassword">
+            </div>
+  
+  
+          <button type="button" class="btn btn-primary" (click)="patientlogin()"
+            style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none; border-radius:5px;">Login</button>
+  
+          <br>
+          <hr>
+          <a routerLink="/signup-donor" style=" font-weight:normal; color: #214666;">Don't have an account? SignUp</a>
+          <hr>
+          <a routerLink="/login-donor" style=" font-weight:normal; color: #214666;">Login as Donor</a>
+          <hr>
+          <a routerLink="/login-admin" style=" font-weight:normal; color: #214666;">Login as Admin</a>
+  
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,182 @@
+<!--
+    MENU BAR
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-#dc3545" style="background-color: #dc3545;">
+    <div class="container-fluid">
+      <h1 style="font-weight: bold; font-size: 25px; color: aliceblue; margin-right: 2%;">Welcome to BloodBank!</h1>&nbsp;&nbsp;&nbsp;
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/donors-tab-admin">Donors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/patients-tab-admin">Patients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/help-tab-admin">Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/settings-tab-admin">Settings</a>
+          </li>
+          <li>
+            <button routerLink="/login-admin" class="btn btn-success">LogOut</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<!--
+    ADD BLOOD LITERS FORM
+-->
+
+<div class="promo p-5 mb-4 bg-aqua rounded-3">
+    <div class="container-fluid py-5">
+        <br><br><br><br><br><br>
+
+        <h2 class="display-6 fw-bold" style="color: #dc3545;">Want to add liters of Blood to store?</h2>    
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" data-bs-target="#Add_blood_in_store" type="button">Click Here</button>
+    </div>
+</div>
+
+
+
+<h2 style="color: #dc3545; font-weight: bold; text-align: center;">Available Blood!</h2>
+<!--
+    TABE TO DISPLAY ALL AVAILABLE BLOODS WITH QUANTITY
+-->
+<table class="table mt-1"> <!--mt-1 means 1 top margin-->
+    <thead>
+        <tr>
+            <th scope="col" style="color: #445360; font-size: 25px; text-align: center;">Blood Type</th>
+            <th scope="col" style="color: #445360; font-size: 25px; text-align: center;">Quantity (in ltr)</th>
+        </tr>
+    </thead>
+
+
+    <tbody style="color: #445360; font-size: 20px; font-weight: bold; text-align: center;">
+        <tr>
+            <td>A-</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>B-</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>AB-</td>
+            <td>25</td>
+        </tr>
+<!--
+        <tr *ngFor="let record of allBusinessRecords">
+            <td>{{record.id}}</td>
+            <td>{{record.name}}</td>
+            <td>{{record.email}}</td>
+            <td>{{record.number}}</td>
+            <td>{{record.address}}</td>
+
+            <td>
+              <button (click)="EditBusinessRecords(record)" type="button" class="btn btn-primary btn-info" data-bs-toggle="modal" data-bs-target="#UpdateBusinessModel" type="button">Edit</button>&nbsp;
+              <button (click)="deleteBusinessRecords(record)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+    -->
+
+    </tbody>
+</table>
+
+
+
+
+  <!-- Add New Business Modal -->
+  <div class="modal fade" id="Add_blood_in_store" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: #dc3545; font-size: 25px; text-align: center; font-weight: bold;">Add Blood in Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Blood Type</label>
+              <select name="type" id="type" formControlName="type" class="form-control">
+                <option value="A_positive">A+</option>
+                <option value="A_negative">A-</option>
+                <option value="B_positive">B+</option>
+                <option value="B_negative">B-</option>
+                <option value="AB_positive">AB+</option>
+                <option value="AB_negative">AB-</option>
+                <option value="O_positive">O+</option>
+                <option value="O_negative">O-</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Blood Quantity</label>
+              <input type="number" min="0" formControlName="quantity" class="form-control" id="quantity">
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Update Business Modal -->
+<!--    
+    <div class="modal fade" id="UpdateBusinessModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Business Record</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+            <form [formGroup]="formValue">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Business Name</label>
+                <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Business Email</label>
+                <input type="text" formControlName="email" class="form-control" id="email">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Business Contact No.</label>
+                  <input type="text" formControlName="number" class="form-control" id="number">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Business Address</label>
+                  <input type="text" formControlName="address" class="form-control" id="address">
+              </div>
+            </form>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="  updateRecord()">Update Record</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+<br><br>
+-->

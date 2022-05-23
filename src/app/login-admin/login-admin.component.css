@@ -1,0 +1,29 @@
+.login-image{
+
+    width:900px;
+    height:800px;
+    padding: 20px;
+    margin: 100px auto;
+    box-shadow: 0px 5px 10px 5px darkgray;
+    border: 10px solid #dc3545;
+    border-radius: 10px;
+    font-family: sans-serif;
+
+    background-image: url("login2.jpg");
+    background-size: cover;
+    background-repeat:repeat-x;
+    background-position: center;
+
+}
+
+.card{
+    margin: 15px;
+    border: 5px solid #dc3545;
+    border-radius: 5%;
+    width: 550px;
+    padding: 45px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    color: #dc3545;
+}

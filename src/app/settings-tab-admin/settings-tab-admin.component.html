@@ -1,0 +1,52 @@
+<!--
+    MENU BAR
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-#dc3545" style="background-color: #dc3545;">
+    <div class="container-fluid">
+        <h1 style="font-weight: bold; font-size: 25px; color: aliceblue;">Account Settings!</h1>
+
+        <div class="d-flex">
+            <button routerLink="/dashboard-admin" class="btn btn-success"
+                style="width: 80px; text-align: center; border-radius: 10px;">Back</button>
+            &nbsp;&nbsp;
+            <button routerLink="/login-admin" class="btn btn-success"
+                style="width: 80px; text-align: center; border-radius: 10px;">LogOut</button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="display-6 p-5 mb-4 rounded-3 fw-bold">
+    <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Edit name
+        <input formControlName="name" type="text" class="form-control" id="name" style="width: 400px;"
+            placeholder="Enter full name">
+    </h2>
+    <hr>
+    <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Edit number
+        <input formControlName="name" type="text" class="form-control" id="name" style="width: 400px;"
+            placeholder="Enter number with country code">
+    </h2>
+    <hr>
+    <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Edit email
+        <input formControlName="name" type="text" class="form-control" id="name" style="width: 400px;"
+            placeholder="Enter email">
+    </h2>
+    <hr>
+
+    <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Edit address
+        <input formControlName="name" type="text" class="form-control" id="name" style="width: 400px;"
+            placeholder="Enter permenant address">
+    </h2>
+    <hr>
+
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+            style=" font-weight:bold; color:aliceblue; border-style: none; width: 200px;" type="button">Update</button>
+        &nbsp; &nbsp;
+        <button type="button" class="btn btn-primary" routerLink="/dashboard-admin" data-bs-toggle="modal"
+            style=" font-weight:bold; color:aliceblue; border-style: none; width: 200px;" type="button">Ignore</button>
+    </span>
+    <hr>
+
+</div>

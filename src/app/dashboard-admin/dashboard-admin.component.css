@@ -1,0 +1,9 @@
+.nav-item{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.promo{
+    background-image: url('promo_Img.jpg');
+    background-repeat:repeat-x;
+}

@@ -1,0 +1,206 @@
+<!--
+    MENU BAR
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-#dc3545" style="background-color: #dc3545;">
+    <div class="container-fluid">
+        <h1 style="font-weight: bold; font-size: 25px; color: aliceblue;">Donors Information!</h1>
+      
+        <div class="d-flex">
+            <button routerLink="/dashboard-admin" class="btn btn-success" style="width: 80px; text-align: center; border-radius: 10px;">Back</button>
+            &nbsp;&nbsp;
+            <button routerLink="/login-admin" class="btn btn-success" style="width: 80px; text-align: center; border-radius: 10px;">LogOut</button>
+        </div>
+    </div>
+  </nav>
+
+
+
+
+
+<!--
+    ADD NEW DONOR FORM
+-->
+
+<div class="display-6 p-5 mb-4 rounded-3 fw-bold">    
+    <h2 style="color: #dc3545; font-size: 30px; font-weight: bold;">Want to add a new donor?</h2>    
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" data-bs-target="#Add_new_donor" type="button">Click Here</button>
+</div>
+
+<div class="display-6 p-5 mb-4 rounded-3 fw-bold">    
+  <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Search a donor by name</h2>    
+<form style="display: inline-block;">
+  <input formControlName="donorname" type="text" class="form-control" id="donorname" style="width: 400px;" placeholder="Enter full name">
+  <span class="input-group-btn">
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" type="button">Search</button>
+</span>
+</form>
+</div>
+
+
+<!--
+<div class="display-6 p-5 mb-4 rounded-3 fw-bold">    
+  <h2 style="color: #dc3545; font-size: 25px; font-weight: bold;">Report of all donors</h2>    
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" data-bs-target="#Add_new_donor" type="button">Generate</button>
+</div>
+-->
+
+<div class="display-6 p-2 rounded-3 fw-bold">
+<h3 style="color: #dc3545; font-size: 25px; font-weight: bold; text-align: center;">All existing Donors!</h3>
+</div>
+<!--
+    Making Table to display all donors
+-->
+<table class="table mt-1"> <!--mt-1 means 1 top margin-->
+    <thead style="font-size: 18px; color: #445360; text-align: center;">
+        <tr>
+            <th scope="col">Donor name</th>
+            <th scope="col">Donor blood group</th>
+            <th scope="col">Donor email</th>
+            <th scope="col">Donor number</th>
+            <th scope="col">Donor address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+<!--        <tr *ngFor="let record of donors">
+            <td>{{record.name}}</td>
+            <td>{{record.bloodType}}</td>           
+            <td>{{record.email}}</td>
+            <td>{{record.number}}</td>
+            <td>{{record.address}}</td>
+
+            <td>
+              <button (click)="deleteDonor()" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+-->
+<tr style="font-size: 17px; color: #445360; text-align: center;">
+  <td>Ahmed</td>
+  <td>B+</td>           
+  <td>ahmed22@gmail.com</td>
+  <td>03335671239</td>
+  <td>H#20 St#7 G-9/1 Islamabad</td>
+
+  <td>
+    <button (click)="deleteDonor()" class="btn btn-primary btn-info" style="width: 80px;">View</button>&nbsp;
+    <button (click)="deleteDonor()" class="btn btn-danger" style="width: 80px;">Delete</button>
+</td>
+</tr>
+
+
+<tr style="font-size: 17px; color: #445360; text-align: center;">
+  <td>Umer</td>
+  <td>AB+</td>           
+  <td>umer01@gmail.com</td>
+  <td>03216782253</td>
+  <td>H#54 St#11 I-10/1 Islamabad</td>  
+
+  <td>
+    <button (click)="deleteDonor()" class="btn btn-primary btn-info" style="width: 80px;">View</button>&nbsp;
+    <button (click)="deleteDonor()" class="btn btn-danger" style="width: 80px;">Delete</button>
+</td>
+</tr>
+
+
+    </tbody>
+</table>
+
+
+
+
+
+  <!-- Add New Business Modal -->
+  <div class="modal fade" id="Add_new_donor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: #dc3545; font-size: 25px; text-align: center; font-weight: bold;">Add new Donor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+          <form [formGroup]="add_new_donor">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's name</label>
+              <input type="text" min="0" formControlName="name" class="form-control" id="name">
+            </div>
+            <div class="mb-3"> 
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's email </label>
+              <input type="text" min="0" formControlName="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's number</label>
+              <input type="text" min="0" formControlName="number" class="form-control" id="number">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's address</label>
+              <input type="text" min="0" formControlName="address" class="form-control" id="address">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's blood group</label>
+              <select name="type" id="bloodType" formControlName="bloodType" class="form-control">
+                <option value="A_positive">A+</option>
+                <option value="A_negative">A-</option>
+                <option value="B_positive">B+</option>
+                <option value="B_negative">B-</option>
+                <option value="AB_positive">AB+</option>
+                <option value="AB_negative">AB-</option>
+                <option value="O_positive">O+</option>
+                <option value="O_negative">O-</option>
+              </select>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addDonor()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Update Business Modal -->
+<!--    
+    <div class="modal fade" id="UpdateBusinessModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Business Record</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+            <form [formGroup]="formValue">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Business Name</label>
+                <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Business Email</label>
+                <input type="text" formControlName="email" class="form-control" id="email">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Business Contact No.</label>
+                  <input type="text" formControlName="number" class="form-control" id="number">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Business Address</label>
+                  <input type="text" formControlName="address" class="form-control" id="address">
+              </div>
+            </form>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="  updateRecord()">Update Record</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+<br><br>
+-->
