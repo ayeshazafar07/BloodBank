@@ -14,7 +14,7 @@ import { SignupDonorComponent } from './signup-donor/signup-donor.component';
 
 const routes: Routes = [
   {
-    path:'', redirectTo:'login-donor', pathMatch:'full'
+    path:'', redirectTo:'login-admin', pathMatch:'full'
   },
   {
     path: 'login-admin', component: LoginAdminComponent  
