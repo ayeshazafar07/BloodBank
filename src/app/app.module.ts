@@ -17,6 +17,7 @@ import { EditprofileDonorComponent } from './editprofile-donor/editprofile-donor
 import { LoginPatientComponent } from './login-patient/login-patient.component';
 import { HomepageDonorComponent } from './homepage-donor/homepage-donor.component';
 import { SignupPatientComponent } from './signup-patient/signup-patient.component';
+import { HomepagePatientComponent } from './homepage-patient/homepage-patient.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SignupPatientComponent } from './signup-patient/signup-patient.componen
     EditprofileDonorComponent,
     LoginPatientComponent,
     HomepageDonorComponent,
-    SignupPatientComponent
+    SignupPatientComponent,
+    HomepagePatientComponent
   ],
   imports: [
     BrowserModule,

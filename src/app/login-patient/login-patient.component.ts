@@ -14,7 +14,7 @@ export class LoginPatientComponent implements OnInit {
   }
 
   patientlogin() {
-    this.router.navigate(['dashboard-admin']);
+    this.router.navigate(['homepage-patient']);
   }
 
 }

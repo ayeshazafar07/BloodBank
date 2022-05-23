@@ -5,6 +5,7 @@ import { DonorsTabAdminComponent } from './donors-tab-admin/donors-tab-admin.com
 import { EditprofileDonorComponent } from './editprofile-donor/editprofile-donor.component';
 import { HelpTabAdminComponent } from './help-tab-admin/help-tab-admin.component';
 import { HomepageDonorComponent } from './homepage-donor/homepage-donor.component';
+import { HomepagePatientComponent } from './homepage-patient/homepage-patient.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginDonorComponent } from './login-donor/login-donor.component';
 import { LoginPatientComponent } from './login-patient/login-patient.component';
@@ -52,6 +53,9 @@ const routes: Routes = [
   },
   {
     path: 'homepage-donor', component: HomepageDonorComponent
+  },
+  {
+    path: 'homepage-patient', component: HomepagePatientComponent
   }
 
 ];

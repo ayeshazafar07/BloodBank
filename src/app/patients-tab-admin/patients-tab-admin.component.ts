@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsTabAdminComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deletePatient() {
+    
   }
 
 }

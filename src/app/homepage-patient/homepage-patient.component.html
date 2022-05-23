@@ -39,51 +39,51 @@
     <div class="container-fluid py-5">
         <br><br>
 
-        <h2 class="display-6 fw-bold" style="color: #dc3545;">Donate Blood...</h2>    
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" data-bs-target="#DonateBlood" type="button">Click Here</button>
+        <h2 class="display-6 fw-bold" style="color: #dc3545;">Request Blood...</h2>    
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none;" data-bs-target="#RequestBlood" type="button">Click Here</button>
     </div>
 </div>
 
 
 
-<div class="modal fade" id="DonateBlood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: #dc3545; font-size: 25px; text-align: center; font-weight: bold;">Donate Blood</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;"> Select Blood Type</label>
-            <select name="type" id="type" formControlName="type" class="form-control">
-              <option value="A_positive">A+</option>
-              <option value="A_negative">A-</option>
-              <option value="B_positive">B+</option>
-              <option value="B_negative">B-</option>
-              <option value="AB_positive">AB+</option>
-              <option value="AB_negative">AB-</option>
-              <option value="O_positive">O+</option>
-              <option value="O_negative">O-</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Blood Quantity</label>
-            <input type="number" min="0" formControlName="quantity" class="form-control" id="quantity">
-          </div>
-        </form>
 
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Donate</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<div class="modal fade" id="RequestBlood" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: #dc3545; font-size: 25px; text-align: center; font-weight: bold;">Request for Blood</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;"> Select Blood Type</label>
+              <select name="type" id="type" formControlName="type" class="form-control">
+                <option value="A_positive">A+</option>
+                <option value="A_negative">A-</option>
+                <option value="B_positive">B+</option>
+                <option value="B_negative">B-</option>
+                <option value="AB_positive">AB+</option>
+                <option value="AB_negative">AB-</option>
+                <option value="O_positive">O+</option>
+                <option value="O_negative">O-</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Blood Quantity</label>
+              <input type="number" min="0" formControlName="quantity" class="form-control" id="quantity">
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Request</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
 
 
