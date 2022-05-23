@@ -16,7 +16,7 @@ import { SignupPatientComponent } from './signup-patient/signup-patient.componen
 
 const routes: Routes = [
   {
-    path:'', redirectTo:'login-donor', pathMatch:'full'
+    path:'', redirectTo:'login-admin', pathMatch:'full'
   },
   {
     path: 'login-admin', component: LoginAdminComponent  
