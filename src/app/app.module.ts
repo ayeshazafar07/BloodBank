@@ -18,6 +18,7 @@ import { HomepageDonorComponent } from './homepage-donor/homepage-donor.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SignupPatientComponent } from './signup-patient/signup-patient.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SignupDonorComponent,
     EditprofileDonorComponent,
     LoginPatientComponent,
-    HomepageDonorComponent
+    HomepageDonorComponent,
+    SignupPatientComponent
   ],
   imports: [
     BrowserModule,
