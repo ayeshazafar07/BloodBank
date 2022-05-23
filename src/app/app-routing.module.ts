@@ -11,6 +11,7 @@ import { LoginPatientComponent } from './login-patient/login-patient.component';
 import { PatientsTabAdminComponent } from './patients-tab-admin/patients-tab-admin.component';
 import { SettingsTabAdminComponent } from './settings-tab-admin/settings-tab-admin.component';
 import { SignupDonorComponent } from './signup-donor/signup-donor.component';
+import { SignupPatientComponent } from './signup-patient/signup-patient.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,9 @@ const routes: Routes = [
   },
   {
     path: 'login-patient', component: LoginPatientComponent
+  },
+  {
+    path: 'signup-patient', component: SignupPatientComponent
   },
   {
     path: 'homepage-donor', component: HomepageDonorComponent
