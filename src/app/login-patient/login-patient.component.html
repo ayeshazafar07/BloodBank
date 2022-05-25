@@ -10,16 +10,16 @@
 
           <div class="mb-3">
             <label class="form-label" style=" font-weight:bold; color: #dc3545;">Email address</label>
-            <input formControlName="adminemail" type="text" class="form-control" id="adminemail"
+            <input formControlName="adminemail" type="text" class="form-control" id="email"
               aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label class="form-label" style=" font-weight:bold; color: #dc3545;">Password</label>
-            <input formControlName="adminpassword" type="password" class="form-control" id="adminpassword">
+            <input formControlName="adminpassword" type="password" class="form-control" id="password">
           </div>
 
 
-        <button type="button" class="btn btn-primary" (click)="patientlogin()"
+        <button type="button" class="btn btn-primary" (click)="patientlogin(this)"
           style=" font-weight:bold; color:aliceblue; background-color: #dc3545; border-style: none; border-radius:5px;">Login</button>
 
         <br>

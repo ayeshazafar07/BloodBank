@@ -24,15 +24,8 @@ export class DonorsTabAdminComponent implements OnInit {
                }
 
   ngOnInit(): void {
-    this.donorData = this.formBuilder.group({
-      name: [''],
-      email: [''],
-      number: [''],
-      bloodType: [''],
-      address:['']
-    })
-//    this.generateReport()
-  }
+  
+    }
   mainForm() {
     this.add_new_donor = this.formBuilder.group({
       name:['',Validators.required],

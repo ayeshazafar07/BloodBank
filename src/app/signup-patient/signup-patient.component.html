@@ -1,61 +1,61 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1>BloodBank Patient SignUp</h1><hr>
-                </div>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>BloodBank Patient SignUp</h1><hr>
+              </div>
+              <form [formGroup]="add_new_patient" (ngSubmit)="onSubmit()">
 
+                <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's name</label>
+                     <input type="text" min="0" formControlName="name" class="form-control" id="name">
+                   </div>
+                   <div class="mb-3"> 
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's email </label>
+                     <input type="text" min="0" formControlName="email" class="form-control" id="email">
+                   </div>
+                   <div class="mb-3"> 
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's Password </label>
+                     <input type="text" min="0" formControlName="password" class="form-control" id="email">
+                   </div>
+                   <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's number</label>
+                     <input type="text" min="0" formControlName="phone" class="form-control" id="number">
+                   </div>
+                   <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's address</label>
+                     <input type="text" min="0" formControlName="address" class="form-control" id="address">
+                   </div>
+                   <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's city</label>
+                     <input type="text" min="0" formControlName="city" class="form-control" id="city">
+                   </div>
+                   <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's blood group</label>
+                     <select name="type" id="bloodType" formControlName="bloodType" class="form-control">
+                       <option value="A_positive">A+</option>
+                       <option value="A_negative">A-</option>
+                       <option value="B_positive">B+</option>
+                       <option value="B_negative">B-</option>
+                       <option value="AB_positive">AB+</option>
+                       <option value="AB_negative">AB-</option>
+                       <option value="O_positive">O+</option>
+                       <option value="O_negative">O-</option>
+                     </select>
+                   </div>
+                   <div class="mb-3">
+                     <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Patient's Blood Liters</label>
+                     <input type="text" min="0" formControlName="amount" class="form-control" id="bloodAmount">
+                   </div>
+       
+                 </form>
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">SignUp</button>
+                <br>  
+              
+                <a routerLink="/login-donor">Already have an account? LogIn</a>
 
-                  <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input type="text" formControlname="namesignup" class="form-control" id="name" aria-describedby="emailHelp">
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">Email Address</label>
-                    <input type="text" formControlname="useremailsignup" class="form-control" id="useremail" aria-describedby="emailHelp">
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" formControlname="passwordsignup" class="form-control" id="password" aria-describedby="emailHelp">
-                  </div>
-
-                    <div class="mb-3">
-                      <label class="form-label">Phone Number</label>
-                      <input type="text" formControlname="usernumbersignup" class="form-control" id="usernumber" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Address</label>
-                        <input type="text" formControlname="usercitysignup" class="form-control" id="usercity" aria-describedby="emailHelp">
-                      </div>
-                    <div class="mb-3">
-                        <label class="form-label">City</label>
-                        <input type="text" formControlname="usercitysignup" class="form-control" id="usercity" aria-describedby="emailHelp">
-                      </div>
-
-                      <div class="mb-3">
-                        <label class="form-label">Blood Type</label>
-                        <select name="type" id="type" formControlName="type" class="form-control">
-                            <option value="A_positive">A+</option>
-                            <option value="A_negative">A-</option>
-                            <option value="B_positive">B+</option>
-                            <option value="B_negative">B-</option>
-                            <option value="AB_positive">AB+</option>
-                            <option value="AB_negative">AB-</option>
-                            <option value="O_positive">O+</option>
-                            <option value="O_negative">O-</option>
-                          </select>
-                      </div>
-
-
-
-                    <button type="submit" class="btn btn-primary" (click)="signuppatient()">SignUp</button>
-                  <br>  
-                  <a routerLink="/login-patient">Already have an account? LogIn</a>
-
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 </div>
