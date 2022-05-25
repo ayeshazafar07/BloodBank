@@ -10,6 +10,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginDonorComponent } from './login-donor/login-donor.component';
 import { LoginPatientComponent } from './login-patient/login-patient.component';
 import { PatientsTabAdminComponent } from './patients-tab-admin/patients-tab-admin.component';
+import { RequestComponent } from './request/request.component';
 import { SettingsTabAdminComponent } from './settings-tab-admin/settings-tab-admin.component';
 import { SignupDonorComponent } from './signup-donor/signup-donor.component';
 import { SignupPatientComponent } from './signup-patient/signup-patient.component';
@@ -56,6 +57,9 @@ const routes: Routes = [
   },
   {
     path: 'homepage-patient', component: HomepagePatientComponent
+  },
+  {
+    path: 'request', component: RequestComponent
   }
 
 ];
