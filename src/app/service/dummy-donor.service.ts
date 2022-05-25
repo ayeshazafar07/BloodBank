@@ -12,22 +12,32 @@ export class DummyDonorService {
         name: 'abc',
         email: 'abc@gmail.com',
         address: 'H3 P5 F10 Isbd',
-        number: '03335417890',
-        bloodType: 'A-'
+        city: 'Islamabad',
+        phone: '03335417890',
+        bloodType: 'A-',
+        amount: '10',
+        password: '123456',
+
       },
       {
         name: 'abc',
         email: 'abc@gmail.com',
         address: 'H3 P5 F10 Isbd',
-        number: '03335417890',
-        bloodType: 'A-'
+        city: 'Islamabad',
+        phone: '03335417890',
+        bloodType: 'A-',
+        amount: '10',
+        password: '123456',
       },
       {
         name: 'abc',
         email: 'abc@gmail.com',
         address: 'H3 P5 F10 Isbd',
-        number: '03335417890',
-        bloodType: 'A-'
+        city: 'Islamabad',
+        phone: '03335417890',
+        bloodType: 'A-',
+        amount: '10',
+        password: '123456',
       }
     ];
   }

@@ -63,46 +63,18 @@
     </thead>
 
     <tbody>
-<!--        <tr *ngFor="let record of donors">
-            <td>{{record.name}}</td>
-            <td>{{record.bloodType}}</td>           
-            <td>{{record.email}}</td>
-            <td>{{record.number}}</td>
-            <td>{{record.address}}</td>
 
-            <td>
-              <button (click)="deleteDonor()" class="btn btn-danger">Delete</button>
+        <tr style="font-size: 17px; color: #445360; text-align: center;" *ngFor="let do of donors let i=index">
+          <td>{{do.name}}</td>
+          <td>{{do.bloodType}}</td>           
+          <td>{{do.email}}</td>
+          <td>{{do.phone}}</td>
+          <td>{{do.address}}</td>
+          <td>
+            <button  class="btn btn-primary btn-info" style="width: 80px;">View</button>&nbsp;
+            <button (click)="deleteDonor(do, i)" class="btn btn-danger" style="width: 80px;">Delete</button>
           </td>
         </tr>
--->
-<tr style="font-size: 17px; color: #445360; text-align: center;">
-  <td>Ahmed</td>
-  <td>B+</td>           
-  <td>ahmed22@gmail.com</td>
-  <td>03335671239</td>
-  <td>H#20 St#7 G-9/1 Islamabad</td>
-
-  <td>
-    <button (click)="deleteDonor()" class="btn btn-primary btn-info" style="width: 80px;">View</button>&nbsp;
-    <button (click)="deleteDonor()" class="btn btn-danger" style="width: 80px;">Delete</button>
-</td>
-</tr>
-
-
-<tr style="font-size: 17px; color: #445360; text-align: center;">
-  <td>Umer</td>
-  <td>AB+</td>           
-  <td>umer01@gmail.com</td>
-  <td>03216782253</td>
-  <td>H#54 St#11 I-10/1 Islamabad</td>  
-
-  <td>
-    <button (click)="deleteDonor()" class="btn btn-primary btn-info" style="width: 80px;">View</button>&nbsp;
-    <button (click)="deleteDonor()" class="btn btn-danger" style="width: 80px;">Delete</button>
-</td>
-</tr>
-
-
     </tbody>
 </table>
 
@@ -122,7 +94,7 @@
         
 <!--          <form [formGroup]="add_new_donor">
 -->
-<form>
+        <form [formGroup]="add_new_donor" (ngSubmit)="onSubmit()">
 
          <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's name</label>
@@ -132,9 +104,13 @@
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's email </label>
               <input type="text" min="0" formControlName="email" class="form-control" id="email">
             </div>
+            <div class="mb-3"> 
+              <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's Password </label>
+              <input type="text" min="0" formControlName="password" class="form-control" id="email">
+            </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's number</label>
-              <input type="text" min="0" formControlName="number" class="form-control" id="number">
+              <input type="text" min="0" formControlName="phone" class="form-control" id="number">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's address</label>
@@ -142,7 +118,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's city</label>
-              <input type="text" min="0" formControlName="address" class="form-control" id="address">
+              <input type="text" min="0" formControlName="city" class="form-control" id="city">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's blood group</label>
@@ -159,7 +135,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" style="color: #445360; font-size: 20px; text-align: center; font-weight: bold;">Donor's Blood Liters</label>
-              <input type="text" min="0" formControlName="address" class="form-control" id="address">
+              <input type="text" min="0" formControlName="amount" class="form-control" id="bloodAmount">
             </div>
 
           </form>
@@ -167,7 +143,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="addDonor()">Save</button>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()" >Save</button>
         </div>
       </div>
     </div>

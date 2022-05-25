@@ -29,7 +29,7 @@ adminRoute.route('/addDonor').post(function (req, res) {
 });
 
 //get all patients
-adminRoute.route('/getAllPatients').get(function (req, res) {
+adminRoute.route('/getPatients').get(function (req, res) {
     admin.find(function (err, data) {
         if (err) {
             res.json(err);
@@ -40,7 +40,7 @@ adminRoute.route('/getAllPatients').get(function (req, res) {
     });
 });
 //get all donors
-adminRoute.route('/getAllDonors').get(function (req, res) {
+adminRoute.route('/getDonors').get(function (req, res) {
     donor.find(function (err, data) {
         if (err) {
             res.json(err);
@@ -50,6 +50,33 @@ adminRoute.route('/getAllDonors').get(function (req, res) {
         }
     });
 });
+
+//delete donor
+adminRoute.route('/deleteDonor/:id').delete(function (req, res) {
+    donor.findByIdAndRemove(req.params.id,(err, data) =>{
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(data);
+        }
+    }
+    );
+}
+);
+//delete patient
+adminRoute.route('/deletePatient/:id').delete(function (req, res) {
+    admin.findByIdAndRemove(req.params.id,(err, data) =>{
+        if(err){
+            res.json(err);
+        }
+        else{
+            res.json(data);
+        }
+    }
+    );
+}
+);
 
 
 module.exports = adminRoute;

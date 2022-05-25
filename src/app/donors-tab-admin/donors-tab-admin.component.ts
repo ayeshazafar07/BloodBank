@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { dummyDonor } from './dummyDonor';
 import { DummyDonorService } from '../service/dummy-donor.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/services/api.service';
 
 @Component({
   selector: 'app-donors-tab-admin',
@@ -11,22 +13,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class DonorsTabAdminComponent implements OnInit {
 
   add_new_donor!: FormGroup;
-
+  submitted = false;
   donors: dummyDonor[] = [];
   dd: any;
   donorData!: FormGroup;
-  constructor(private formBuilder:FormBuilder ,private donorService: DummyDonorService) { }
+  constructor(private formBuilder:FormBuilder ,private donorService: DummyDonorService,
+              private router: Router,private apiService:ApiService,private ngZone:NgZone) {
+                this.mainForm();
+                this.readDonor();
+               }
 
   ngOnInit(): void {
-
-    this.add_new_donor = this.formBuilder.group({
-      donorname:[''],
-      donoremail: [''],
-      donornumber: [''],
-      donorblood: [''],
-      donoraddress:['']
-    })
-
     this.donorData = this.formBuilder.group({
       name: [''],
       email: [''],
@@ -36,34 +33,40 @@ export class DonorsTabAdminComponent implements OnInit {
     })
 //    this.generateReport()
   }
+  mainForm() {
+    this.add_new_donor = this.formBuilder.group({
+      name:['',Validators.required],
+      email: ['',Validators.required],
+      password: ['',Validators.required],
+      phone: ['',Validators.required],
+      bloodType: ['',Validators.required],
+      address:['',Validators.required],
+      city:['',Validators.required],
+      amount:['',Validators.required]
+    })
+
+      
+  }
+  readDonor() {
+    this.apiService.getDonors().subscribe(
+      (res) => {
+        console.log(res);
+        this.donors = res;
+      }
+    )
+  }
 
   generateReport() {
 
     this.donors = this.donorService.findall();
-    
     console.log(this.donors)
     console.log("ndjsjnjkcnjsdnc");
 
 
-    //this.donorData.controls['name'].setValue(this.donors[0].name);
-    //this.donorData.controls['email'].setValue(this.donors[0].email);
-
-
-    //this.dd = this.donorData;
-
-//    this.dd[0].name = this.donors[0].name;
- //   this.dd[0].address = this.donors[0].address;
- //   this.dd[0].number = this.donors[0].number;
- //   this.dd[0].bloodType = this.donors[0].bloodType;
- //   this.dd[0].email = this.donors[0].email;
-
-//    console.log(this.donors.values)
-//    console.log("ndjsjnjkcnjsdnc");
-
     for (let i = 0; i < 3; i++) {
       this.dd[i].name = this.donors[i].name;
       this.dd[i].email = this.donors[i].email;
-      this.dd[i].number = this.donors[i].number;
+      this.dd[i].number = this.donors[i].phone;
       this.dd[i].bloodType = this.donors[i].bloodType;
       this.dd[i].address = this.donors[i].address;
 
@@ -79,8 +82,35 @@ export class DonorsTabAdminComponent implements OnInit {
     this.add_new_donor.reset();
     alert("New donor added")
     }
-  
-  deleteDonor() {
 
+  
+  deleteDonor(donor:any,index:number) {
+    console.log(donor)
+    this.apiService.deleteDonor(donor.id).subscribe(
+      (res) => {
+        console.log(res);
+        this.donors.splice(index,1);
+      }
+    )
+
+  }
+  get myForm() {
+    return this.add_new_donor.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    console.log("submitted")
+    if (this.add_new_donor.invalid) {
+      return;
+    }
+    this.apiService.addDonor(this.add_new_donor.value).subscribe(
+      (res) => {
+        console.log(res);
+        this.ngZone.run(() => this.router.navigateByUrl('/donors-tab-admin'));
+      },
+      (error) => {
+        console.log(error);
+      });
   }
 }

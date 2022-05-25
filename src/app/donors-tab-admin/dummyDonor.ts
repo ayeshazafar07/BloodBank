@@ -1,7 +1,10 @@
 export class dummyDonor {
     name: String = '';
     email: String = '';
-    number: String = '';
+    password: String = '';
+    phone: String = '';
     address: String = '';
+    city: String = '';
     bloodType: String = '';
+    amount: String = '';
 }
