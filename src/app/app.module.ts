@@ -20,6 +20,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SignupPatientComponent } from './signup-patient/signup-patient.component';
 import { HomepagePatientComponent } from './homepage-patient/homepage-patient.component';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HomepagePatientComponent } from './homepage-patient/homepage-patient.co
     LoginPatientComponent,
     HomepageDonorComponent,
     SignupPatientComponent,
-    HomepagePatientComponent
+    HomepagePatientComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,

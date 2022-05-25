@@ -1,0 +1,83 @@
+<!--
+    MENU BAR
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-#dc3545" style="background-color: #dc3545;">
+    <div class="container-fluid">
+        <h1 style="font-weight: bold; font-size: 25px; color: aliceblue;">Requests</h1>
+      
+        <div class="d-flex">
+            <button routerLink="/dashboard-admin" class="btn btn-success" style="width: 80px; text-align: center; border-radius: 10px;">Back</button>
+            &nbsp;&nbsp;
+            <button routerLink="/login-admin" class="btn btn-success" style="width: 80px; text-align: center; border-radius: 10px;">LogOut</button>
+        </div>
+    </div>
+  </nav>
+
+
+
+
+<div class="display-6 p-2 rounded-3 fw-bold">
+<h3 style="color: #dc3545; font-size: 25px; font-weight: bold; text-align: center;">All requests!</h3>
+</div>
+<!--
+    Making Table to display all donors
+-->
+<table class="table mt-1"> <!--mt-1 means 1 top margin-->
+    <thead style="font-size: 18px; color: #445360; text-align: center;">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Blood Group</th>
+            <th scope="col">Email</th>
+            <th scope="col">Number</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+<!--        <tr *ngFor="let record of donors">
+            <td>{{record.name}}</td>
+            <td>{{record.bloodType}}</td>           
+            <td>{{record.email}}</td>
+            <td>{{record.number}}</td>
+            <td>{{record.address}}</td>
+
+            <td>
+              <button (click)="deleteDonor()" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+-->
+<tr style="font-size: 17px; color: #445360; text-align: center;">
+  <td>Ahmed</td>
+  <td>Donor/Patient</td>
+  <td>B+</td>           
+  <td>ahmed22@gmail.com</td>
+  <td>03335671239</td>
+  <td>H#20 St#7 G-9/1 Islamabad</td>
+
+  <td>
+    <button (click)="viewRequest()" class="btn btn-primary btn-info" style="width: 80px;">Accept</button>&nbsp;
+    <button (click)="deleteRequest()" class="btn btn-danger" style="width: 80px;">Reject</button>
+</td>
+</tr>
+
+
+<tr style="font-size: 17px; color: #445360; text-align: center;">
+  <td>Umer</td>
+  <td>Donor/Patient</td>
+  <td>AB+</td>           
+  <td>umer01@gmail.com</td>
+  <td>03216782253</td>
+  <td>H#54 St#11 I-10/1 Islamabad</td>  
+
+  <td>
+    <button (click)="viewRequest()" class="btn btn-primary btn-info" style="width: 80px;">Accept</button>&nbsp;
+    <button (click)="deleteRequest()" class="btn btn-danger" style="width: 80px;">Reject</button>
+</td>
+</tr>
+
+
+    </tbody>
+</table>
+
